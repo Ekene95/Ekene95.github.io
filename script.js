@@ -1,5 +1,3 @@
-// script.js
-
 // Glitch effect function for header
 function glitchText(element, originalText) {
   const glitchCharacters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#%&$';
@@ -20,5 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   headerTitle.addEventListener('mouseover', () => {
     glitchText(headerTitle, originalText);
+  });
+});
+
+// Smooth Scroll for Navigation Links
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
   });
 });
